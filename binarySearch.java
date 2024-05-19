@@ -1,50 +1,40 @@
-//{ Driver Code Starts
-// Initial Template for Java
-
-import java.io.*;
 import java.util.*;
+import java.io.*;
+class Binary_Search
+{
+	public int Binary_Operations(int arr[],int key)
+	{
+		int n=arr.length;
+		int s=0;
+		int e=n-1;
+		while(s<=e)
+		{
+			int mid=(s+e)/2;
+			if(arr[mid]==key)
+			{
+			 return mid;
+			}
+			else if(arr[mid]>key)
+			{
+				e=mid-1;      
+			}
+			else
+			{
+				s=mid+1;
+			}
+		}
+		return -1;
+	}
 
-public class GFG {
-    public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        while (T > 0) {
-            int n = sc.nextInt();
-            int arr[] = new int[n];
-            for (int i = 0; i < n; i++) {
-                arr[i] = sc.nextInt();
-            }
 
-            int key = sc.nextInt();
-            Solution g = new Solution();
-            System.out.println(g.binarysearch(arr, n, key));
-            T--;
-        }
-    }
-}
 
-// } Driver Code Ends
-
-// User function Template for Java
-
-class Solution {
-    int binarysearch(int arr[], int n, int k) {
-        // code here
-        int i = 0;
-        int a = 0;
-        while (i < n) {
-
-            int start = 0;
-            int end = n - 1;
-            int mid = start + end / 2;
-            if (arr[mid] == k) {
-                a += mid;
-            } else if (arr[mid] < k) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
-        }
-        return a;
-    }
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter Key to search:");
+		int key=sc.nextInt();
+		int arr1[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+		Binary_Search obj1=new Binary_Search();
+		System.out.println("Key Found At Index:::"+obj1.Binary_Operations(arr1,key));
+	}
 }
