@@ -8,11 +8,12 @@ class KadanesAlgo
 			for(int i=0;i<arr1.length;i++)
 			{
 				cs+=arr1[i];
+				ms=Math.max(ms,cs);
 				if(cs<0)
 				{
 					cs=0;
 				}
-				ms=Math.max(ms,cs);
+				
 			}
 		return ms;
 	}
